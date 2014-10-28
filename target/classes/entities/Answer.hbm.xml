@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<class name="entities.Answer" table="answers" catalog="evaluater">
+		<id name="answerID" type="int">
+			<column name="answerID" />
+			<generator class="identity"/>
+		</id>
+		<property name="questionID" type="int">
+			<column name="questionID" not-null="true"/>
+		</property>
+		<property name="answer" type="string">
+			<column name="answer" not-null="true"/>
+		</property>
+	</class>
+</hibernate-mapping>

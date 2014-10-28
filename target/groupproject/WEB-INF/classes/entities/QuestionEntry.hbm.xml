@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<class name="entities.QuestionEntry" table="questions" catalog="evaluater">
+		<id name="questionID" type="int">
+			<column name="questionID" />
+			<generator class="identity"/>
+		</id>
+		<property name="lectureID" type="int">
+			<column name="lectureID" not-null="true"/>
+		</property>
+		<property name="timeAsked" type="java.lang.Long">
+			<column name="timeAsked" not-null="true"/>
+		</property>
+		<property name="questionText" type="string">
+			<column name="questionText" not-null="true"/>
+		</property>
+		<property name="voting" type="int">
+			<column name="voting" not-null="true"/>
+		</property>
+		<property name="hasAnswers" type="boolean">
+			<column name="hasAnswers" not-null="true"/>
+		</property>
+		<property name="isAnswered" type="boolean">
+			<column name="isAnswered" not-null="true"/>
+		</property>
+	</class>
+</hibernate-mapping>

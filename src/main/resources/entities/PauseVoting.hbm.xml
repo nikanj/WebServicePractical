@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<class name="entities.PauseVoting" table="pausevotings" catalog="evaluater">
+		<id name="pvID" type="int">
+			<column name="pvID" />
+			<generator class="identity"/>
+		</id>
+		<property name="lectureID" type="int">
+			<column name="lectureID" not-null="true"/>
+		</property>
+		<property name="time" type="java.lang.Long">
+			<column name="time" not-null="true"/>
+		</property>
+		<property name="yes" type="int">
+			<column name="yes" not-null="true"/>
+		</property>
+		<property name="no" type="int">
+			<column name="no" not-null="true"/>
+		</property>
+		<property name="sleeping" type="int">
+			<column name="sleeping" not-null="true"/>
+		</property>
+	</class>
+</hibernate-mapping>

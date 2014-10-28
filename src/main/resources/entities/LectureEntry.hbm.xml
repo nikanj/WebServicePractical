@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<class name="entities.LectureEntry" table="lectures" catalog="evaluater">
+		<id name="lectureID" type="int">
+			<column name="lectureID" />
+			<generator class="identity"/>
+		</id>
+		<property name="name" type="string">
+			<column name="name" not-null="true"/>
+		</property>
+		<property name="start" type="java.lang.Long">
+			<column name="start"/>
+		</property>
+		<property name="end" type="java.lang.Long">
+			<column name="end"/>
+		</property>
+		<property name="evaluatable" type="java.lang.Long">
+			<column name="evaluatable"/>
+		</property>
+	</class>
+</hibernate-mapping>

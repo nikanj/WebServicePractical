@@ -1,0 +1,168 @@
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>GroupProject</display-name>
+
+	<!-- Spring Context Configuration -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring-beans.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>app</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>app</servlet-name>
+		<url-pattern>*.app</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>StudentController</servlet-name>
+		<servlet-class>controllers.StudentController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StudentController</servlet-name>
+		<url-pattern>/studentLogin</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>StudentAnswerController</servlet-name>
+		<servlet-class>controllers.StudentAnswerController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StudentAnswerController</servlet-name>
+		<url-pattern>/studentAnswerController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>StudentReviewController</servlet-name>
+		<servlet-class>controllers.StudentReviewController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StudentReviewController</servlet-name>
+		<url-pattern>/studentReview</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>StudentVoteController</servlet-name>
+		<servlet-class>controllers.StudentVoteController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StudentVoteController</servlet-name>
+		<url-pattern>/studentVote</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>StudentQuestionController</servlet-name>
+		<servlet-class>controllers.StudentQuestionController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StudentQuestionController</servlet-name>
+		<url-pattern>/studentQuestionController</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>LecturerLoginController</servlet-name>
+		<servlet-class>controllers.LecturerLoginController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LecturerLoginController</servlet-name>
+		<url-pattern>/lecturerLoginController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LecturerController</servlet-name>
+		<servlet-class>controllers.LecturerController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LecturerController</servlet-name>
+		<url-pattern>/lecturerController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LecturerUpdateController</servlet-name>
+		<servlet-class>controllers.LecturerUpdateController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LecturerUpdateController</servlet-name>
+		<url-pattern>/lecturerUpdateController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LecturerMarkQuestionAsAnsweredController</servlet-name>
+		<servlet-class>controllers.LecturerMarkQuestionAsAnsweredController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LecturerMarkQuestionAsAnsweredController</servlet-name>
+		<url-pattern>/lecturerMarkQuestionAsAnswered</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AverageCalculatorController</servlet-name>
+		<servlet-class>controllers.AverageCalculatorController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AverageCalculatorController</servlet-name>
+		<url-pattern>/AverageCalculatorController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>UpdateLecturerController</servlet-name>
+		<servlet-class>controllers.UpdateLecturerController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateLecturerController</servlet-name>
+		<url-pattern>/UpdateLecturerController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>PauseDataForGraphController</servlet-name>
+		<servlet-class>controllers.PauseDataForGraphController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PauseDataForGraphController</servlet-name>
+		<url-pattern>/PauseDataForGraphController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>StudentReviewSpeedController</servlet-name>
+		<servlet-class>controllers.StudentReviewSpeedController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StudentReviewSpeedController</servlet-name>
+		<url-pattern>/studentReviewSpeedController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>StudentReviewPauseController</servlet-name>
+		<servlet-class>controllers.StudentReviewPauseController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StudentReviewPauseController</servlet-name>
+		<url-pattern>/studentReviewPauseController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>StudentReviewRatingController</servlet-name>
+		<servlet-class>controllers.StudentReviewRatingController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StudentReviewRatingController</servlet-name>
+		<url-pattern>/studentReviewRatingController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>GraphDataController</servlet-name>
+		<servlet-class>controllers.GraphDataController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GraphDataController</servlet-name>
+		<url-pattern>/GraphDataController</url-pattern>
+	</servlet-mapping>
+	
+</web-app>

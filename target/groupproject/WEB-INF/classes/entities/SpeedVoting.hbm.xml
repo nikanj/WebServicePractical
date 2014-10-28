@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<class name="entities.SpeedVoting" table="speedvotings" catalog="evaluater">
+		<id name="svID" type="int">
+			<column name="svID" />
+			<generator class="identity"/>
+		</id>
+		<property name="lectureID" type="int">
+			<column name="lectureID" not-null="true"/>
+		</property>
+		<property name="time" type="java.lang.Long">
+			<column name="time" not-null="true"/>
+		</property>
+		<property name="slower" type="int">
+			<column name="slower" not-null="true"/>
+		</property>
+		<property name="ok" type="int">
+			<column name="ok" not-null="true"/>
+		</property>
+		<property name="faster" type="int">
+			<column name="faster" not-null="true"/>
+		</property>
+	</class>
+</hibernate-mapping>

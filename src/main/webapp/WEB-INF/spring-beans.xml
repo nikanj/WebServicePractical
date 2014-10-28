@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+	
+	<!-- JDBC -->
+	<bean id="dataSource" destroy-method="close" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/evaluater" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean>
+	
+	<!-- UpdateNotifier bean for the callbacks -->
+	<bean id="updateNotifier" class="thrift.UpdateNotifier">
+	</bean>
+	
+	<!-- Hibernate Beans -->
+	<bean id="hbmLecturesDAO" class="backend.HbmLecturesDAOImpl">
+	</bean>
+	<bean id="hbmQuestionsDAO" class="backend.HbmQuestionsDAOImpl">
+		<property name="updateNotifier" ref="updateNotifier" />
+	</bean>
+	<bean id="hbmVotingsDAO" class="backend.HbmVotingsDAOImpl">
+		<property name="updateNotifier" ref="updateNotifier" />
+	</bean>
+	
+</beans>
